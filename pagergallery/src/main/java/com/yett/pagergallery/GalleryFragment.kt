@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.fragment_gallery.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -86,7 +87,10 @@ class GalleryFragment : Fragment() {
         val galleryAdapter = GalleryAdapter()
         recyclerView.apply {
             adapter = galleryAdapter
-            layoutManager = GridLayoutManager(requireContext(),2)
+            //这种方式是所有图片无论大小都对齐显示
+            //layoutManager = GridLayoutManager(requireContext(),2)
+            //这种方式是根据图片大小进行错开显示
+            layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
         }
         //实例化ViewModel
         galleryViewModel = ViewModelProvider(requireActivity()).get(GalleryViewModel::class.java)

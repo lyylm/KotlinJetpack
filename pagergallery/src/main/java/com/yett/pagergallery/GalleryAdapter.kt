@@ -34,10 +34,16 @@ class GalleryAdapter:ListAdapter<PhotoItem,MyViewHolder>(DiffCallback) {
         //给图片添加点击事件
         holder.itemView.setOnClickListener{
             Bundle().apply {
-                //传递图片信息数据
-                putParcelable("PHOTO",getItem(holder.adapterPosition))
-                //导航到photoFragment
-                holder.itemView.findNavController().navigate(R.id.action_galleryFragment_to_photoFragment,this)
+//                //传递图片信息数据
+//                putParcelable("PHOTO",getItem(holder.adapterPosition))
+//                //导航到photoFragment
+//                holder.itemView.findNavController().navigate(R.id.action_galleryFragment_to_photoFragment,this)
+                //传会所有的图片列表
+                putParcelableArrayList("PHOTO_LIST", ArrayList(currentList))
+                //传递当前图片的序号
+                putInt("PHOTO_POSITION", holder.adapterPosition)
+                //进行导航
+                holder.itemView.findNavController().navigate(R.id.action_galleryFragment_to_pagerPhotoFragment,this)
             }
         }
         return holder
@@ -53,7 +59,7 @@ class GalleryAdapter:ListAdapter<PhotoItem,MyViewHolder>(DiffCallback) {
         //使用glide加载图片
         Glide.with(holder.itemView)
             .load(getItem(position).previewUrl)
-            .placeholder(R.drawable.ic_baseline_photo_24)
+            .placeholder(R.drawable.photo_placeholder)
             .listener(object : RequestListener<Drawable>{
                 override fun onLoadFailed(
                     e: GlideException?,

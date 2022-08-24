@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-
     //如下两个插件缺一个不可，kotlin-android为基本支持android 开发插件,kotlin-android-extensions就是省去我们频繁找id的插件了
     id 'kotlin-android'
     id 'kotlin-android-extensions'
@@ -11,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.kotlingallery"
+        applicationId "com.yett.pagergallery"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -33,7 +32,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    //parcelable的快速方式
+
     androidExtensions{
         experimental = true
     }

@@ -1,4 +1,4 @@
-package com.example.kotlingallery
+package com.yett.pagergallery
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -20,10 +20,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [PagerPhotoFragment.newInstance] factory method to
+ * Use the [PhotoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PagerPhotoFragment : Fragment() {
+class PhotoFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -51,12 +51,12 @@ class PagerPhotoFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment PagerPhotoFragment.
+         * @return A new instance of fragment PhotoFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            PagerPhotoFragment().apply {
+            PhotoFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -73,8 +73,8 @@ class PagerPhotoFragment : Fragment() {
         }
         Glide.with(requireContext())
             .load(arguments?.getParcelable<PhotoItem>("PHOTO")?.fullUrl)
-            .placeholder(R.drawable.ic_gray_photo_24)
-            .listener(object : RequestListener<Drawable> {
+            .placeholder(R.drawable.ic_baseline_photo_24)
+            .listener(object :RequestListener<Drawable>{
                 override fun onLoadFailed(
                     e: GlideException?,
                     model: Any?,

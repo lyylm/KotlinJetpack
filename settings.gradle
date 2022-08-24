@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "KotlinGallery"
 include ':app'
 include ':viewpagedemo'
+include ':pagergallery'

@@ -32,6 +32,8 @@
         <entry key="..\:/AndroidProjects/KotlinJetpack/app/src/main/res/layout/fragment_photo.xml" value="0.36614583333333334" />
         <entry key="..\:/AndroidProjects/KotlinJetpack/app/src/main/res/layout/gallery_cell.xml" value="0.2513586956521739" />
         <entry key="..\:/AndroidProjects/KotlinJetpack/app/src/main/res/menu/menu.xml" value="0.36614583333333334" />
+        <entry key="..\:/AndroidProjects/KotlinJetpack/gallerydownload/src/main/res/layout/cell_gallery.xml" value="0.4087209302325581" />
+        <entry key="..\:/AndroidProjects/KotlinJetpack/gallerydownload/src/main/res/layout/fragment_gallery.xml" value="0.36614583333333334" />
         <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallery/src/main/res/drawable/photo_placeholder.xml" value="0.301" />
         <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallery/src/main/res/layout/activity_main.xml" value="0.2513586956521739" />
         <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallery/src/main/res/layout/cell_gallery.xml" value="0.2513586956521739" />
@@ -40,6 +42,10 @@
         <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallery/src/main/res/layout/fragment_photo.xml" value="0.36614583333333334" />
         <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallery/src/main/res/layout/pager_photo_view.xml" value="0.29957264957264956" />
         <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallery/src/main/res/menu/menu_refresh.xml" value="0.5" />
+        <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallerysave/src/main/res/drawable/photo_placeholder.xml" value="0.301" />
+        <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallerysave/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallerysave/src/main/res/layout/cell_gallery.xml" value="0.5466562986003111" />
+        <entry key="..\:/AndroidProjects/KotlinJetpack/pagergallerysave/src/main/res/layout/fragment_gallery.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>

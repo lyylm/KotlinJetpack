@@ -15,7 +15,6 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import kotlinx.android.synthetic.main.cell_gallery.view.*
-import java.util.zip.Inflater
 
 const val PHOTO_LIST = "photoList"
 const val PHOTO_POSITION = "photoPosition"
@@ -49,12 +48,31 @@ class GalleryAdapter:ListAdapter<PhotoItem,GalleryViewHolder>(DiffCallbck) {
     }
 
     override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
-        //设置图片占位符在等待图片加载的时候，波纹闪烁的动态
-        holder.itemView.shimmerLayoutCellGallery.apply {
-            setShimmerColor(0x55FFFFFF)
-            setShimmerAngle(0)
-            startShimmerAnimation()
+        //获取当前项图片的信息
+        val photoItem:PhotoItem = getItem(position)
+        //对cell_gallery上的控件进行设置
+        with(holder.itemView){
+            //设置图片占位符在等待图片加载的时候，波纹闪烁的动态
+            shimmerLayoutCellGallery.apply {
+                setShimmerColor(0x55FFFFFF)
+                setShimmerAngle(0)
+                startShimmerAnimation()
+            }
+            //对textView控件进行设置
+            textViewUser.text=photoItem.photoUser
+            textViewLikes.text = photoItem.photoLikes.toString()
+            textViewComments.text = photoItem.photoComments.toString()
+            //获取图片控件的高度
+            imageViewCellGallery.layoutParams.height = photoItem.photoHeight
         }
+        //设置图片占位符在等待图片加载的时候，波纹闪烁的动态
+//        holder.itemView.shimmerLayoutCellGallery.apply {
+//            setShimmerColor(0x55FFFFFF)
+//            setShimmerAngle(0)
+//            startShimmerAnimation()
+//        }
+        //获取图片的高度
+        //holder.itemView.imageViewCellGallery.layoutParams.height = getItem(position).photoHeight
         //glide为当前的iamgeView加载图片资源
         Glide.with(holder.itemView)
             .load(getItem(position).previewUrl)//设置当前位置的图片网络资源路径

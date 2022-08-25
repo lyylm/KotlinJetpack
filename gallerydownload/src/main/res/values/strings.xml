@@ -2,4 +2,6 @@
     <string name="app_name">GalleryDownload</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save_icon">save</string>
+    <string name="photo_tag">%d / %d</string>
 </resources>

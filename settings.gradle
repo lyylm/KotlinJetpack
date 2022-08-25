@@ -16,3 +16,4 @@ rootProject.name = "KotlinGallery"
 include ':app'
 include ':viewpagedemo'
 include ':pagergallery'
+include ':gallerydownload'

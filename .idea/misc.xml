@@ -22,6 +22,15 @@
         <entry key="..\:/AndroidObjects/KotlinGallery/pagergallery/src/main/res/layout/fragment_gallery.xml" value="0.29846014492753625" />
         <entry key="..\:/AndroidObjects/KotlinGallery/pagergallery/src/main/res/layout/fragment_pager_photo.xml" value="0.34782608695652173" />
         <entry key="..\:/AndroidObjects/KotlinGallery/pagergallery/src/main/res/layout/pager_photo_view.xml" value="0.34782608695652173" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/drawable/icon_save.xml" value="0.104" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/layout-v31/gallery_footer.xml" value="0.34692028985507245" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/layout/activity_main.xml" value="0.34692028985507245" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/layout/cell_gallery.xml" value="0.34692028985507245" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/layout/cell_pager_photo.xml" value="0.34692028985507245" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/layout/fragment_gallery.xml" value="0.34692028985507245" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/layout/fragment_pager_photo.xml" value="0.34692028985507245" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/layout/gallery_footer.xml" value="0.34692028985507245" />
+        <entry key="..\:/AndroidObjects/KotlinGallery/pagergallerysave/src/main/res/menu/gallery_menu.xml" value="0.8231850117096019" />
         <entry key="..\:/AndroidObjects/KotlinGallery/viewpagedemo/src/main/res/drawable/ic_android_100.xml" value="0.3375" />
         <entry key="..\:/AndroidObjects/KotlinGallery/viewpagedemo/src/main/res/layout/activity_main.xml" value="0.35778985507246375" />
         <entry key="..\:/AndroidObjects/KotlinGallery/viewpagedemo/src/main/res/layout/fragment_rotate.xml" value="0.35778985507246375" />

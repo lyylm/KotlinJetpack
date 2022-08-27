@@ -112,6 +112,9 @@ class GalleryAdapter:ListAdapter<PhotoItem,GalleryViewHolder>(DiffCallback) {
                 }
             })
             .into(holder.itemView.imageViewCellGallery)
+
+        //下拉到底部进行数据刷新加载
+
     }
 
     override fun getItemCount(): Int {
@@ -123,3 +126,28 @@ class GalleryAdapter:ListAdapter<PhotoItem,GalleryViewHolder>(DiffCallback) {
     }
 }
 class GalleryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

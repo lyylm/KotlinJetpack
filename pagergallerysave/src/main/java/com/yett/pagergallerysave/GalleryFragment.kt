@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.widget.LinearLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.fragment_gallery.*
 
@@ -105,5 +106,34 @@ class GalleryFragment : Fragment() {
             swipeLayoutGallery.isRefreshing = true
             galleryViewModel.fetchData()
         }
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

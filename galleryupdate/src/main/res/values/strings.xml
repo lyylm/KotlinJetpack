@@ -2,4 +2,6 @@
     <string name="app_name">GalleryUpdate</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save_icon">save_icon_describe</string>
+    <string name="pager_photo_tag">%d / %d</string>
 </resources>

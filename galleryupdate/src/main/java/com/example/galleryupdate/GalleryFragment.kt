@@ -1,12 +1,11 @@
 package com.example.galleryupdate
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.fragment_gallery.*
 
@@ -62,25 +61,71 @@ class GalleryFragment : Fragment() {
             }
     }
 
+    //显示菜单
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_refresh,menu)
+    }
+
+    //为菜单添加点击事件
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.menuItemRefresh -> {
+                swipeLayoutGallery.isRefreshing = true
+                galleryViewModel.resetQuery()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        setHasOptionsMenu(true)//显示菜单
         galleryViewModel = ViewModelProvider(requireActivity()).get(GalleryViewModel::class.java)
-        val galleryAdapter = GalleryAdapter()
+        val galleryAdapter = GalleryAdapter(galleryViewModel)
         recyclerViewGallery.apply {
             adapter = galleryAdapter
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         }
 
         galleryViewModel.photoListLive.observe(requireActivity(), Observer {
+            if (galleryViewModel.needToScrollToTop){
+                recyclerViewGallery.scrollToPosition(0)
+                galleryViewModel.needToScrollToTop=false
+            }
             galleryAdapter.submitList(it)
             swipeLayoutGallery.isRefreshing=false
         })
 
-        galleryViewModel.fetchData()
+        galleryViewModel.dataStatusLive.observe(requireActivity(), Observer {
+            galleryAdapter.footerViewStatus = it
+            galleryAdapter.notifyItemChanged(galleryAdapter.itemCount-1)
+            //如果是网络错误则停止数据刷新
+            if (it== DATA_STATUS_NETWORK_ERROR) swipeLayoutGallery.isRefreshing=false
+        })
+
+        //galleryViewModel.resetQuery()
 
         swipeLayoutGallery.setOnRefreshListener {
             swipeLayoutGallery.isRefreshing=true
-            galleryViewModel.fetchData()
+            galleryViewModel.resetQuery()
         }
+
+        //下拉到底部的时候进行数据的加载
+        //实现接口内部类
+        recyclerViewGallery.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (dy<0) return//如果是往上滑，则返回不做任何处理
+                //获取布局器
+                val layoutManager:StaggeredGridLayoutManager = recyclerView.layoutManager as StaggeredGridLayoutManager
+                val intArray = IntArray(2)
+                layoutManager.findLastVisibleItemPositions(intArray)
+                //如果是滑到底部时，进行数据的刷新
+                if (intArray[0] == galleryAdapter.itemCount - 1){
+                    galleryViewModel.fetchData()
+                }
+            }
+        })
     }
 }
